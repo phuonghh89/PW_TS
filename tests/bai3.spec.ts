@@ -72,8 +72,8 @@ test ('xPath', async ({page}) =>{
     await page.locator('//div[@class="product-card"]/h4[contains(text(), "iPhone")]').hover()
 
 
-    await page.locator('//div[@class="user-card" and @data-role="admin" and @data-status = "active"]')
-    await page.locator('//div[@class="user-card"]//button[@class="btn-primary" or @class = "btn-secondary"]')
+    await page.locator('//div[@class="user-card" and @data-role="admin" and @data-status = "active"]').hover()
+    await page.locator('//div[@class="user-card"]//button[@class="btn-primary" or @class = "btn-secondary"]').hover()
 
     
     //await page.pause()
