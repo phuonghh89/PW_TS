@@ -35,8 +35,8 @@ test('Get by role', async ({ page }) => {
     // const soLuongsanPhamGiamGia = await page.locator('[class*="product-card"] [class*="out-of-stock"]').count()
     // console.log(soLuongsanPhamGiamGia)
 
-    // const soLuongInactive = await page.locator('.user-table .status-badge.inactive').count()
-    // console.log(`so luong inactive: ${soLuongInactive}`)
+    const soLuongInactive = await page.locator('.user-table .status-badge.inactive').count()
+    expect(soLuongInactive).toEqual(1)
 
     // await page.locator('.user-table .user-row[data-user-id ="002"] .btn-delete').hover()
     // const text = await page.locator('.user-table>tbody>tr:last-child').allTextContents()
@@ -73,7 +73,8 @@ test ('xPath', async ({page}) =>{
 
 
     await page.locator('//div[@class="user-card" and @data-role="admin" and @data-status = "active"]').hover()
-    await page.locator('//div[@class="user-card"]//button[@class="btn-primary" or @class = "btn-secondary"]').hover()
+    const soLuongBtn = await page.locator('//div[@class="user-card"]//button[@class="btn-primary" or @class = "btn-secondary"]').count()
+    await expect(soLuongBtn).toEqual(2)
 
     
     //await page.pause()
