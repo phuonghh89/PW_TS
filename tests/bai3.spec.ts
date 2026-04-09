@@ -53,7 +53,7 @@ test('Get by role', async ({ page }) => {
 
 
 
-    await page.pause()
+    //await page.pause()
 
 
 })
