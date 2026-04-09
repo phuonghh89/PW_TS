@@ -58,7 +58,7 @@ test('Get by role', async ({ page }) => {
 
 })
 
-test.only ('xPath', async ({page}) =>{
+test ('xPath', async ({page}) =>{
       await page.goto('https://demoapp-sable-gamma.vercel.app/');
 
     await page.getByRole('link', { name: 'Bài 2: Playwright Locators' }).click();
@@ -70,5 +70,11 @@ test.only ('xPath', async ({page}) =>{
     await page.locator('//button[text()="Add to Cart"]/ancestor::div[@class = "product-card"]').count()
     await page.locator('//div[@class="product-card" and @data-category="clothing"]').hover()
     await page.locator('//div[@class="product-card"]/h4[contains(text(), "iPhone")]').hover()
+
+
+    await page.locator('//div[@class="user-card" and @data-role="admin" and @data-status = "active"]')
+    await page.locator('//div[@class="user-card"]//button[@class="btn-primary" or @class = "btn-secondary"]')
+
+    
     //await page.pause()
 })
